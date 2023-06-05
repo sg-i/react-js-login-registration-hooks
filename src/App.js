@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, Link, useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import './App.scss';
 
 import AuthService from './services/auth.service';
 
-import Login from './components/Login';
+import Login from './components/LoginPage/Login';
 import Register from './components/Register';
 import Home from './components/Home';
 import Profile from './components/Profile';
@@ -56,7 +56,7 @@ const App = () => {
   return (
     <div>
       {/* <nav style={{ display: 'none' }} className="navbar navbar-expand navbar-dark bg-dark"> */}
-      <nav className="navbar navbar-expand navbar-dark bg-dark">
+      <nav style={{ position: 'absolute' }} className="navbar navbar-expand navbar-dark bg-dark">
         <Link to={'/'} className="navbar-brand">
           bezKoder
         </Link>
@@ -122,7 +122,7 @@ const App = () => {
         )}
       </nav>
 
-      <div className="container mt-3">
+      <div className="app-wrap">
         <Routes>
           <Route exact path={'/'} element={<Home />} />
           <Route exact path={'/home'} element={<Home />} />
